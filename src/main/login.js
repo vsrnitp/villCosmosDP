@@ -32,7 +32,9 @@ export default class Login extends React.Component {
       password:this.state.password
     };
 
-    axios.post(`https://villCosmos-1.vsrnitp.repl.co/api/dp/deliveryAgentLogin/deliveryAgentLogin`, { userName:this.state.userName,password:this.state.password})
+    //https://villCosmos-1.vsrnitp.repl.co/api/dp/deliveryAgentLogin/deliveryAgentLogin
+
+    axios.post(`http://localhost:8080/api/dp/deliveryAgentLogin/deliveryAgentLogin`, { userName:this.state.userName,password:this.state.password})
       .then(res => {
         if(res.data.name)
         this.setState({loginData:res.data.name,active:true});
